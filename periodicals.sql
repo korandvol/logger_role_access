@@ -1,0 +1,33 @@
+DROP DATABASE  IF EXISTS periodicals;
+
+CREATE DATABASE periodicals CHAR SET UTF8;
+USE periodicals;
+
+CREATE TABLE user(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+first_Name VARCHAR(120) NOT NULL,
+last_Name  VARCHAR(120) NOT NULL,
+email VARCHAR(120) NOT NULL,
+password VARCHAR(120)  NOT NULL,
+password_Confirm  VARCHAR(120) NOT NULL,
+role VARCHAR(120)
+);
+
+
+CREATE TABLE periodical(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+description VARCHAR(256) NOT NULL,
+price INT(11) NOT NULL,
+encoded_Image VARCHAR(1000) NOT NULL
+);
+
+CREATE TABLE bucket(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_id INT(11) DEFAULT NULL,
+product_id INT(11) DEFAULT NULL,
+purchase_date timestamp NULL);
+
+SELECT * FROM user;
+SELECT * FROM periodical;
+SELECT * FROM bucket;

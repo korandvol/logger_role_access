@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'ua.lviv.lgs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.5.1'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.5.3'
+	implementation group: 'org.springframework.security', name: 'spring-security-taglibs', version: '5.5.1'
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.40'
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+    
+}
+
+test {
+	useJUnitPlatform()
+}
